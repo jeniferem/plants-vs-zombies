@@ -9,7 +9,7 @@ public class ClickRayCast : MonoBehaviour
     [SerializeField]
     private string coinTag = "Coin";
     [SerializeField]
-    private UnityEvent onCoinCollected;
+    private UnityEvent <Transform> onCoinCollected;
     [SerializeField]
     private bool isActive = true;
     public void SetActiive(bool active)
@@ -34,7 +34,7 @@ public class ClickRayCast : MonoBehaviour
     }
     private void PressCoin(GameObject coin)
     {
-        onCoinCollected.Invoke();
+        onCoinCollected.Invoke(coin.transform);
         coin.GetComponent<Coin>().Collect();
     }
 
