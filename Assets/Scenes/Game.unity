@@ -1486,7 +1486,7 @@ MonoBehaviour:
   - {fileID: 692741853}
   - {fileID: 842986220}
   - {fileID: 689962463}
-  enemySpawnPoint: {fileID: 0}
+  enemySpawnPoint: {fileID: 1232807408}
 --- !u!1001 &451620522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5787,7 +5787,7 @@ MonoBehaviour:
   - {fileID: 1657796347}
   - {fileID: 1015473774}
   - {fileID: 85884395}
-  enemySpawnPoint: {fileID: 0}
+  enemySpawnPoint: {fileID: 766863690}
 --- !u!4 &1816857262
 Transform:
   m_ObjectHideFlags: 0
