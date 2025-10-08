@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
-public class coinsSpawer : MonoBehaviour
+public class CoinsSpawer : MonoBehaviour
 
 {
     [SerializeField]
@@ -14,6 +14,10 @@ public class coinsSpawer : MonoBehaviour
     private float offsetY = 0f;
     private Coroutine spawnCoroutine;
     private bool isActive = false;
+    private void Start()
+    {
+        Activate(true);
+    }
     private void Activate(bool Active)
     {
         isActive = Active;
