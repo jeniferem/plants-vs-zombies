@@ -9,7 +9,11 @@ public class ClickRayCast : MonoBehaviour
     [SerializeField]
     private string coinTag = "Coin";
     [SerializeField]
-    private UnityEvent <Transform> onCoinCollected;
+    private string coinTag2 = "Coin2";
+    [SerializeField]
+    private UnityEvent<Transform> onCoinCollected;
+    [SerializeField]
+    private UnityEvent<Transform> onCoinCollected2;
     [SerializeField]
     private bool isActive = true;
     public void SetActiive(bool active)
@@ -28,6 +32,10 @@ public class ClickRayCast : MonoBehaviour
                 {
                     PressCoin(hitInfo.collider.gameObject);
                 }
+                else if (hitInfo.collider.CompareTag(coinTag2))
+                {
+                    PressCoin2(hitInfo.collider.gameObject);
+                }
 
             }
         }
@@ -37,5 +45,11 @@ public class ClickRayCast : MonoBehaviour
         onCoinCollected.Invoke(coin.transform);
         coin.GetComponent<Coin>().Collect();
     }
-
+    private void PressCoin2(GameObject coin)
+    {
+         onCoinCollected2.Invoke(coin.transform);
+    coin.GetComponent<Coin>().Collect();
+    }
 }
+
+

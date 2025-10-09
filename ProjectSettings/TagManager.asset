@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Coin
   - Emeny
+  - moneda
+  - Coin2
   layers:
   - Default
   - TransparentFX
