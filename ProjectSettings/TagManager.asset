@@ -8,6 +8,7 @@ TagManager:
   - Emeny
   - moneda
   - Coin2
+  - Enemy
   layers:
   - Default
   - TransparentFX

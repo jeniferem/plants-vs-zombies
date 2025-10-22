@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     {
         health.InitializeHealth(enemyData.health);
         StartLooking();
-        SoundManager.instance.Play("Zombie_appear");
+        //SoundManager.instance.Play("Zombie_appear");
     }
     private void StartLooking()
     {
