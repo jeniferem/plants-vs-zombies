@@ -17,11 +17,11 @@ public class Bullet : MonoBehaviour
     {
         rigidbody.linearVelocity = transform.forward * speed;
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
-            Health enemyHealth = collision.gameObject.GetComponent<Health>();
+            Health enemyHealth = other.GetComponent<Health>();
             if (enemyHealth != null)
             {
                 enemyHealth.TakeDamage(damage);

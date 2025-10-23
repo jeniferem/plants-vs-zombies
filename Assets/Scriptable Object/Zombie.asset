@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 100
   timeBetweenAttacks: 2
-  health: 100
+  attackDuration: 1
+  health: 300
   speed: 20
   damage: 30
   enemyName: zombie
