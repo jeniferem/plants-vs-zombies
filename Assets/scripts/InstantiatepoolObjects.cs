@@ -41,4 +41,8 @@ public class InstantiatepoolObjects : MonoBehaviour
         objectPool.Add(newObj);
         return newObj;
     }
+    public GameObject GetCurrentObject()
+    {
+        return currentObject;
+    }
 }

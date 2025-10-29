@@ -9,6 +9,8 @@ TagManager:
   - moneda
   - Coin2
   - Enemy
+  - floor
+  - Step
   layers:
   - Default
   - TransparentFX
