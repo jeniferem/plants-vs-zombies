@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine. EventSystems;
-public class ButtonController : MonoBehaviour
+public class ButtonController : MonoBehaviour,IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField]
     public UnityEvent onButtonDown;

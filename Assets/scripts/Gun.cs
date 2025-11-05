@@ -1,9 +1,7 @@
 using UnityEngine;
 using System.Collections;
-public class Gun : MonoBehaviour
+public class Gun : BasePlant
 {
-    [SerializeField]
-    private Health health;
     [SerializeField]
     private GunData gunData;
     [SerializeField]
@@ -14,29 +12,24 @@ public class Gun : MonoBehaviour
     private LayerMask enemiesLayer;
     [SerializeField]
     private float raycastOffset = 2f;
-    [SerializeField]
-    private Animator animator;
-    private bool _isActive = false;
     private bool isShooting = false;
     private Health enemyHealth;
     private Coroutine shootCoroutine;
-    public bool IsActive
-    {
-        set{ _isActive = value; }
-    }
     private void OnEnable()
     {
         enemyHealth = null;
         isShooting = false;
+        IsActive = false;
         health.InitializeHealth(gunData.maxHealth);
         animator.Play(gunData.idleAnimationName, 0, 0f);
-        //SoundManager.instance.Play(gunData.appearSoundName);
+        SoundManager.instance.Play(gunData.appearSoundName);
     }
     private void Update()
     {
-        if (_isActive &&!isShooting && health.CurrentHealth > 0)
+        if (isActive &&!isShooting && health.CurrentHealth > 0)
         {
             Vector3 right = transform.TransformDirection(Vector3.right);
+            Vector3 rayOrigin = transform.position + Vector3.up * raycastOffset; 
             if (Physics.Raycast(transform.position + Vector3.up * raycastOffset, right, out RaycastHit hit, gunData.range, enemiesLayer))
             {
                 isShooting = true;
@@ -64,11 +57,13 @@ public class Gun : MonoBehaviour
         {
             StopCoroutine(shootCoroutine);
         }
+        currentstep.IsOccupied = false;
+        currentstep = null; 
         animator.Play(gunData.dieAnimationName, 0, 0f);
         isShooting = false;
         enemyHealth = null;
         SoundManager.instance.Play(gunData.dieShootName);
-        StartCoroutine(DieRoutine());
+        StartCoroutine(DieRoutine(gunData.dieAnimationName));
     }
     private IEnumerator DieRoutine()
     {
