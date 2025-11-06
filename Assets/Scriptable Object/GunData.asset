@@ -21,7 +21,7 @@ MonoBehaviour:
     animationName: 
     actionKey: 4
   - soundName: Attack
-    animationName: shoot
+    animationName: 
     actionKey: 2
   - soundName: Die
     animationName: Die
