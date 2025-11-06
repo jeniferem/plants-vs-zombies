@@ -9,22 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23fb5af557d70274db8219948030328d, type: 3}
-  m_Name: GunData
+  m_Script: {fileID: 11500000, guid: 01b2e66e9de30c146bd599642a0cb214, type: 3}
+  m_Name: ShieldData
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 150
   actionAssets:
-  - soundName: Idle
-    animationName: Gun
+  - soundName: 
+    animationName: Idle
     actionKey: 0
-  - soundName: Appear
-    animationName: 
-    actionKey: 4
-  - soundName: Attack
-    animationName: shoot
-    actionKey: 2
-  - soundName: Die
+  - soundName: 
+    animationName: Hit
+    actionKey: 3
+  - soundName: 
     animationName: Die
     actionKey: 5
-  fireRate: 0.5
-  range: 300

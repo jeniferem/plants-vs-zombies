@@ -111,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 5.42}
+  m_AnchoredPosition: {x: 0, y: 6.99}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3434445024668231486
@@ -336,8 +336,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2454306725105582618}
-  - component: {fileID: 1706065404597800959}
-  - component: {fileID: 2153808447720360299}
   - component: {fileID: 5657595026776941547}
   - component: {fileID: 2126926426748247642}
   - component: {fileID: 2408878891529805931}
@@ -368,59 +366,6 @@ Transform:
   - {fileID: 9056286445913953930}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1706065404597800959
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3793327842697996304}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2153808447720360299
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3793327842697996304}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &5657595026776941547
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -440,8 +385,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 3.36, z: 2}
-  m_Center: {x: -0.2, y: 1.79, z: -0.64}
+  m_Size: {x: 1.51, y: 1.09, z: 1.27}
+  m_Center: {x: 0.05, y: 3.25, z: -0.64}
 --- !u!114 &2126926426748247642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,15 +771,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d46ff39c41064e440ab5cec6543d718c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2995447
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46ff39c41064e440ab5cec6543d718c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.6544496
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46ff39c41064e440ab5cec6543d718c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2995447
+      value: 1.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46ff39c41064e440ab5cec6543d718c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -842,7 +787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46ff39c41064e440ab5cec6543d718c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.12
+      value: 0.76
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46ff39c41064e440ab5cec6543d718c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -880,6 +825,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: humoseta
       objectReference: {fileID: 0}
+    - target: {fileID: 1441877184221417581, guid: d46ff39c41064e440ab5cec6543d718c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015645552420492674, guid: d46ff39c41064e440ab5cec6543d718c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d07f6ff19fe536e4e9c1eb9a5962558c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

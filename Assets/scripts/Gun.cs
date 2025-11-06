@@ -21,15 +21,15 @@ public class Gun : BasePlant
         isShooting = false;
         IsActive = false;
         health.InitializeHealth(gunData.maxHealth);
-        animator.Play(gunData.idleAnimationName, 0, 0f);
-        SoundManager.instance.Play(gunData.appearSoundName);
+        animator.Play(gunData.GetAnimationName(ActionKey.Idle), 0, 0f);
+        SoundManager.instance.Play(gunData.GetSoundName(ActionKey.Appear));
     }
     private void Update()
     {
-        if (isActive &&!isShooting && health.CurrentHealth > 0)
+        if (isActive && !isShooting && health.CurrentHealth > 0)
         {
             Vector3 right = transform.TransformDirection(Vector3.right);
-            Vector3 rayOrigin = transform.position + Vector3.up * raycastOffset; 
+            Vector3 rayOrigin = transform.position + Vector3.up * raycastOffset;
             if (Physics.Raycast(transform.position + Vector3.up * raycastOffset, right, out RaycastHit hit, gunData.range, enemiesLayer))
             {
                 isShooting = true;
@@ -44,9 +44,9 @@ public class Gun : BasePlant
         while (enemyHealth && enemyHealth.CurrentHealth > 0)
         {
             yield return new WaitForSeconds(gunData.fireRate);
-            animator.Play(gunData.shootAnimationName, 0, 0f);
+            animator.Play(gunData.GetAnimationName(ActionKey.Attack), 0, 0f);
             bulletPool.InstantiatepoolObject(bulletPivot);
-            SoundManager.instance.Play(gunData.shootSoundName);
+            SoundManager.instance.Play(gunData.GetSoundName(ActionKey.Attack));
         }
         isShooting = false;
         enemyHealth = null;
@@ -58,17 +58,11 @@ public class Gun : BasePlant
             StopCoroutine(shootCoroutine);
         }
         currentstep.IsOccupied = false;
-        currentstep = null; 
-        animator.Play(gunData.dieAnimationName, 0, 0f);
+        currentstep = null;
         isShooting = false;
         enemyHealth = null;
-        SoundManager.instance.Play(gunData.dieShootName);
-        StartCoroutine(DieRoutine(gunData.dieAnimationName));
-    }
-    private IEnumerator DieRoutine()
-    {
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-        gameObject.SetActive(false);
+        SoundManager.instance.Play(gunData.GetSoundName(ActionKey.Die));
+        StartCoroutine(DieRoutine(gunData.GetAnimationName(ActionKey.Die)));
     }
 }
 

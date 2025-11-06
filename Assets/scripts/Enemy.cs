@@ -24,18 +24,17 @@ public class Enemy : MonoBehaviour
     {
         collider = GetComponent <Collider> ();
     }
-
     private void OnEnable()
     {
         collider.enabled = true;
-        health.InitializeHealth(enemyData.health);
+        health.InitializeHealth(enemyData.maxHealth);
         StartLooking();
-        //SoundManager.instance.Play("Zombie_appear");
+        //SoundManager.instance.Play(enemyData.GetSoundName(ActionKey.Appear));
     }
     private void StartLooking()
     {
         isAttacking = false;
-        animator.Play(enemyData.walkAnimation);
+        animator.Play(enemyData.GetAnimationName(ActionKey.Walk));
     }
     private void Update()
     {
@@ -57,21 +56,26 @@ public class Enemy : MonoBehaviour
     {
         while (targetHealth.CurrentHealth > 0)
         {
-            animator.Play(enemyData.attacKAnimation,0,0f);
+            SoundManager.instance.Play(enemyData.GetSoundName(ActionKey.Attack));
+            animator.Play(enemyData.GetAnimationName(ActionKey.Attack), 0, 0f);
             yield return new WaitForSeconds(enemyData.attackDuration);
-            SoundManager.instance.Play("Zombie_attack");
-            SoundManager.instance.Play("hit_object");
+            SoundManager.instance.Play(enemyData.GetSoundName(ActionKey.Hit));
             onAttackTarget?.Invoke(targetHealth.transform);
             targetHealth.TakeDamage(enemyData.damage);
+            if (targetHealth.CurrentHealth <= 0)
+            {
+                break;
+            }
             yield return new WaitForSeconds(enemyData.timeBetweenAttacks);
         }
+        targetHealth = null;
         attackCoroutine = null;
         StartLooking();
     }
     public void Die()
     {
         collider.enabled = false;
-        SoundManager.instance.Play("Zombie_die");
+        SoundManager.instance.Play(enemyData.GetSoundName(ActionKey.Die));
         StartCoroutine(DieRoutine());
     }
     private IEnumerator DieRoutine()
@@ -80,7 +84,7 @@ public class Enemy : MonoBehaviour
         {
             StopCoroutine(attackCoroutine);
         }
-        animator.Play(enemyData.deathAnimation);
+        animator.Play(enemyData.GetAnimationName(ActionKey.Die));
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         gameObject.SetActive(false);
     }

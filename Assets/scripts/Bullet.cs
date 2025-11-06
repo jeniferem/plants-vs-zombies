@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
             {
                 enemyHealth.TakeDamage(damage);
             }
-            SoundManager.instance.Play("hit_object");
+            SoundManager.instance.Play("hit_Object");
             onHitEnemy?.Invoke(transform);
             gameObject.SetActive(false);
         }
