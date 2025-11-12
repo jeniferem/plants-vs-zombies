@@ -20,7 +20,7 @@ MonoBehaviour:
   - soundName: Zombie_attack
     animationName: Attack
     actionKey: 2
-  - soundName: 
+  - soundName: hit_object
     animationName: Hit
     actionKey: 3
   - soundName: Zombie_die
