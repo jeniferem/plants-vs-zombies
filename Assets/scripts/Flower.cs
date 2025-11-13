@@ -45,6 +45,8 @@ public class Flower : BasePlant
         while (isActive && health.CurrentHealth > 0)
         {
             yield return new WaitForSeconds(flowerData.spawnCoinTime);
+            animator.Play(flowerData.GetAnimationName(ActionKey.Attack),0,0f);
+            SoundManager.instance.Play(flowerData.GetSoundName(ActionKey.Attack));
             for (int i = 0; i < flowerData.coinAmount; i++)
             {
                 if (stepsInRange.Count > 0)

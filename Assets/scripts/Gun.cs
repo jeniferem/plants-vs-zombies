@@ -36,7 +36,7 @@ public class Gun : BasePlant
                 enemyHealth = hit.collider.GetComponent<Health>();
                 shootCoroutine = StartCoroutine(ShootRoutine());
             }
-            Debug.DrawRay(transform.position, right * gunData.range, Color.blue);
+            Debug.DrawRay(rayOrigin, right * gunData.range, Color.blue);
         }
     }
     private IEnumerator ShootRoutine()
