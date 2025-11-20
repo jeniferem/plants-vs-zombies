@@ -26,6 +26,7 @@ public class Health : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
+        if (currentHealh <=0) return;
         currentHealh -= damage;
         currentHealh = Mathf.Clamp(currentHealh, 0, initialHealth);
         UpdateHealthBar();
