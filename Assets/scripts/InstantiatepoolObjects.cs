@@ -4,9 +4,13 @@ public class InstantiatepoolObjects : MonoBehaviour
 {
     [SerializeField]
     private GameObject Prefab;
-
     private List<GameObject> objectPool = new List<GameObject>();
     private GameObject currentObject;
+    public void Initialize()
+    {
+        currentObject = null;
+        objectPool.Clear();
+    }
     public void InstantiatepoolObject(Transform target)
     {
         currentObject = GetPoolObject();

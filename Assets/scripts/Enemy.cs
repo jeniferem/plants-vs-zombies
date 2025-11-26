@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     private float RaycastOffset = 2f;
     [SerializeField]
     private UnityEvent<Transform> onAttackTarget;
+    private UnityEvent onDie = new UnityEvent();
     private bool isAttacking = false;
     private Coroutine attackCoroutine;
     private Health targetHealth;
@@ -86,6 +87,7 @@ public class Enemy : MonoBehaviour
         }
         animator.Play(enemyData.GetAnimationName(ActionKey.Die));
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        onDie?.Invoke();
         gameObject.SetActive(false);
     }
 }
