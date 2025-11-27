@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 3602031299412700860}
   m_Layer: 0
   m_Name: zommbie
-  m_TagString: Emeny
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -516,6 +516,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   RaycastOffset: 50
+  onAttackTarget:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6195289416196106400
 GameObject:
   m_ObjectHideFlags: 0
