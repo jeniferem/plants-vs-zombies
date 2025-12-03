@@ -41,6 +41,7 @@ public class EnemyManager : MonoBehaviour
             enemypool.InstantiatepoolObject(lane.EnemySpawnPoint);
             Enemy spawnedEnemy= enemypool.GetCurrentObject().GetComponent<Enemy>();
             spawnedEnemy.OnDie.AddListener(OnEnemyDie);
+            currentEnemies.Add(spawnedEnemy);
         }
     }
     private void OnEnemyDie()
@@ -53,6 +54,14 @@ public class EnemyManager : MonoBehaviour
                 enemy.OnDie.RemoveListener(OnEnemyDie);
             }
             onWinGame?.Invoke();
+        }
+    }
+    public void EnemiesWin()
+    {
+        foreach (Enemy enemy in currentEnemies)
+        {
+            enemy.OnDie.RemoveListener(OnEnemyDie);
+            enemy.Win();
         }
     }
 }

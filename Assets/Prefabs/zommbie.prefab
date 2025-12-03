@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 7071332007614713207}
   - component: {fileID: 6791470497740788359}
   - component: {fileID: 3602031299412700860}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: zommbie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -496,7 +496,19 @@ MonoBehaviour:
   healthBar: {fileID: 1333817480769242686}
   onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3602031299412700860}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3602031299412700860
 MonoBehaviour:
   m_ObjectHideFlags: 0

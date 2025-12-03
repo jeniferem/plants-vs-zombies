@@ -212,4 +212,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appearAnimationName: coin
   hideAnimationName: coin_reverse
-  secondsActive: 2
+  secondsActive: 4

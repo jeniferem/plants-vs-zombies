@@ -22,12 +22,14 @@ public class Enemy : MonoBehaviour
     private Coroutine attackCoroutine;
     private Health targetHealth;
     private Collider collider;
+    private  bool isActive = false;
     private void Awake()
     {
         collider = GetComponent <Collider> ();
     }
     private void OnEnable()
     {
+        isActive = true;
         collider.enabled = true;
         health.InitializeHealth(enemyData.maxHealth);
         StartLooking();
@@ -40,7 +42,7 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        if (!isAttacking && health.CurrentHealth>0)
+        if (isActive && !isAttacking && health.CurrentHealth>0)
         {
             transform.Translate(Vector3.left * enemyData.speed * Time.deltaTime);
             Vector3 forwad = transform.TransformDirection(Vector3.left);
@@ -56,7 +58,7 @@ public class Enemy : MonoBehaviour
     }
     private IEnumerator Attack()
     {
-        while (targetHealth.CurrentHealth > 0)
+        while ( isActive && targetHealth != null && targetHealth.CurrentHealth > 0)
         {
             SoundManager.instance.Play(enemyData.GetSoundName(ActionKey.Attack));
             animator.Play(enemyData.GetAnimationName(ActionKey.Attack), 0, 0f);
@@ -76,6 +78,7 @@ public class Enemy : MonoBehaviour
     }
     public void Die()
     {
+        isActive = false;
         collider.enabled = false;
         SoundManager.instance.Play(enemyData.GetSoundName(ActionKey.Die));
         StartCoroutine(DieRoutine());
@@ -90,5 +93,16 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         onDie?.Invoke();
         gameObject.SetActive(false);
+    }
+    public void Win()
+    {
+        isActive = false;
+        collider.enabled = false;
+        if (attackCoroutine!= null)
+        {
+            StopCoroutine(attackCoroutine);
+        }
+        animator.Play(enemyData.GetAnimationName(ActionKey.win));
+        SoundManager.instance.Play(enemyData.GetSoundName(ActionKey.win));
     }
 }

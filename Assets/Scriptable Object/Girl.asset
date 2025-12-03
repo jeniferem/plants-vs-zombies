@@ -29,6 +29,9 @@ MonoBehaviour:
   - soundName: Zombie_appear
     animationName: Idle
     actionKey: 4
+  - soundName: win
+    animationName: Dancing
+    actionKey: 6
   attackRange: 100
   timeBetweenAttacks: 2
   attackDuration: 1
