@@ -922,12 +922,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 150
+    m_Font: {fileID: 12800000, guid: 926e598655d9975428262138273d9f56, type: 3}
+    m_FontSize: 209
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 200
+    m_MaxSize: 209
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -984,7 +984,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b088f2e2e473bc74da0d8f7da9413f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: Game
+  _sceneName: Map
+  fadeAnimator: {fileID: 0}
+  fadeAnimationName: FedeOut
+  onSceneLoad:
+    m_PersistentCalls:
+      m_Calls: []
+  onStartScene:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1699303319
 Transform:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private EnemyManager enemyManager;
     [SerializeField]
+    private PlantManager plantManager;
+    [SerializeField]
     private UnityEvent onWinGame;
     [SerializeField]
     private UnityEvent onLoseGame;
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour
         LevelData currentLevel = gameData.levels[gameData.currenttLevelIndex];
         enemyManager.SetEnemiesToSpawn(currentLevel.enemiesToSpawn);
         enemyManager.StartSpawningEnemies();
+        plantManager.SetAvailablePlants(currentLevel.availablePlants);
     }
     public void WinGame()
     {
