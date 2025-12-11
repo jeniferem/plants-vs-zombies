@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e6f50979c94bc4b97dd3cb1c1bcb26, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  currenttLevelIndex: 0
+  currenttLevelIndex: 3
   levels:
   - {fileID: 11400000, guid: 5a98b6feb6ecbad4bb5f1fbe3fee486c, type: 2}
   - {fileID: 11400000, guid: 47fb2716cb7565b4990fa7f66d4de941, type: 2}
   - {fileID: 11400000, guid: 330e2d4199916a146a25d5dbd5a5d03b, type: 2}
+  - {fileID: 11400000, guid: 7f8525b3b459f9141ab9bc6e70bea44b, type: 2}
+  - {fileID: 11400000, guid: aad8fb3cfd4564b48bf11638f34eef36, type: 2}

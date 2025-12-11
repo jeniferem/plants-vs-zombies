@@ -20,6 +20,9 @@ MonoBehaviour:
   - soundName: 
     animationName: Hit
     actionKey: 3
-  - soundName: 
+  - soundName: Flower_Die
     animationName: Die
     actionKey: 5
+  - soundName: ap
+    animationName: Die
+    actionKey: 4

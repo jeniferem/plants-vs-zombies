@@ -11,4 +11,12 @@ public class GameData : ScriptableObject
     {
         currenttLevelIndex = levelIndex;
     }
+     public void AddLevel(int number)
+    {
+        currenttLevelIndex +=number;
+        if(currenttLevelIndex >=levels.Count)
+        {
+             currenttLevelIndex =0;
+        }
+    }
 }

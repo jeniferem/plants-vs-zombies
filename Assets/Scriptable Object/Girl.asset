@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   actionAssets:
-  - soundName: 
+  - soundName: Walking
     animationName: Walking
     actionKey: 1
   - soundName: Zombie_attack
@@ -23,7 +23,7 @@ MonoBehaviour:
   - soundName: hit_object
     animationName: Hit
     actionKey: 3
-  - soundName: Zombie_die
+  - soundName: Zombie_muerte
     animationName: Death
     actionKey: 5
   - soundName: Zombie_appear
